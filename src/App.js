@@ -1,24 +1,22 @@
 import logo from './logo.svg';
 import './App.css';
+import AddList from './components/AddList';
+import SearchList from './components/SearchList';
+import DeleteList from './components/DeleteList';
+import ViewAll from './components/ViewAll';
+import Navbar from './components/Navbar';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<AddList/>}/>
+      <Route path="/search" element={<SearchList/>}/>
+      <Route path="/delete" element={<DeleteList/>}/>
+      <Route path="/view" element={<ViewAll/>}/>
+    </Routes>
+    </BrowserRouter>
   );
 }
 
